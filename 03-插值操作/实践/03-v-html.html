@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  <div id="app">
+    <h2>不使用v-html</h2>
+    <h3>{{url}}</h3>
+
+    <h2>使用v-html</h2>
+    <h3 v-html = 'url'></h3>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <!-- 全局注册一个组件 -->
+  <script>
+    const app = new Vue({
+      el:'#app',
+      data:{
+        message:"我是全局注册的组件里面的信息",
+        url:"<a href='http://www.baidu.com'>百度一下</a>"
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test slot</title>
+</head>
+<body>
+  
+  <div id="app">
+    
+    <!-- 只写一个是拿到子组件的data -->
+    <!-- <cpn></cpn> -->
+    <!-- <cpn></cpn> -->
+
+    <!--  插槽添加内容 -->
+    <!-- <cpn>我是插槽中添加的内容111</cpn> -->
+    <!-- <cpn>我是插槽中添加的内容222</cpn> -->
+
+    <!-- 具名插槽的使用 -->
+    <cpn>
+      <!-- 不添加name的都显示【没具名】 -->
+      <!-- <span>没具名</span> -->
+
+      <span slot="left">左边</span>
+      <!-- 新语法 -->
+      <template v-slot:center>中间</template>
+      <!-- 新语法缩写 -->
+      <template #right>右边</template>
+
+
+
+    </cpn>
+
+    
+  </div>  
+  
+  <template id="cpn">
+      <div>
+        <slot name='left'></slot>
+        <slot name='center'></slot>
+        <slot name='right'></slot>
+      </div>
+  </template>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    const cpn = {
+      template:'#cpn',
+      data(){
+        return {
+          message:'我是子组件'
+        }
+      }
+    }
+
+    new Vue({
+    el:'#app',
+    data(){
+      return {
+        message:'我是父组件'
+      }
+    },
+    components:{
+      cpn
+    }
+  })
+  </script>
+    
+</body>
+</html>

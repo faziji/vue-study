@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试高度塌陷</title>
+</head>
+<body>
+  <style>
+    body{
+      background-color: white;
+    }
+    .box{
+      width: 2700px;
+      /* height: 200px; */
+      background-color: #bfc;
+
+      margin: auto;
+      border: 5px solid black
+    }
+
+    .a{
+      width: 500px;
+      height: 110px;
+
+      background-color: red;
+      float: left;
+    }
+
+    .b{
+      width: 500px;
+      height: 110px;
+
+      background-color: yellow;
+      float: left;
+    }
+
+    .c{
+      width: 500px;
+      height: 110px;
+
+      background-color: pink;
+      float: left;
+    }
+  </style>
+
+  <div class="box">
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+  </div>
+</body>
+</html>

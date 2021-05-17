@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-once测试</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+    <h2 v-once>{{message}}</h2>
+
+
+    <br>
+    <p>以下可以在控制台app.message修改当前message的信息，再查看页面是否变化</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    // 全局注册一个组件app
+    const app = new Vue({
+      el:'#app',
+      data:{
+        message:"我是全局组件的一个信息"
+      }
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+body{
+  /* background: red; */
+  /* background: url("../img/small.jpg"); */
+
+  /* 更换一张大于8kb的图片 */
+  background: url("../img/big.jpg");
+}

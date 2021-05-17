@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <a :href="aHref">
+        <img :src="imgURL" />
+      </a>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          aHref: "http://www.baidu.com",
+          imgURL:
+            "https://cn.bing.com/th?id=OIP.NaSKiHPRcquisK2EehUI3gHaE8&pid=Api&rs=1",
+        },
+      });
+    </script>
+  </body>
+</html>

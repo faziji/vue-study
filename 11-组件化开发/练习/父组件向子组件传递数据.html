@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>父组件向子组件传递数据</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      // 创建一个Person对象
+       function Person(firstName,lastName) {
+        this.firstName = firstName
+        this.lastName = lastName
+      }
+
+      const cpn = {
+        template: "#cpn",
+        props: { //对象写法
+          cmssage:{
+            type:String,
+            default:'zzzzz',
+            required: true //在使用组件必传值
+          },
+          //类型是Object/Array，默认值必须是一个函数
+          cmovies: {
+            type: Array,
+            default () {
+              return [1, 2, 3, 4]
+            }
+          }
+        },
+          data() {
+          return {
+
+          }
+        },
+        methods: {
+
+        },
+      };
+
+
+      const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好",
+        movies: ["复仇者联盟", "钢铁侠", "星际穿越", "哪吒传奇"]
+      },
+      components: {
+        cpn
+      }
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过向Prop传递子组件数据</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  </head>
+  <!-- 
+    很奇怪，这里竟然不会显示标题内容
+
+   -->
+  <body>
+
+      <!-- 向body中添加组件 -->
+      <blog-post title="My journey with Vue"></blog-post>
+      <blog-post title="Blogging with Vue"></blog-post>
+      <blog-post title="Why Vue is so fun"></blog-post>
+  
+   
+    <script>
+      // 定义一个组件
+      Vue.component("blog-post", {
+        props: ["title"],
+        template: "<h3>{{title}}</h3>"
+      });
+
+
+    </script>
+  
+    
+  </body>
+</html>

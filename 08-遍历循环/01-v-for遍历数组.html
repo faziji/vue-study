@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for遍历数组</title>
+</head>
+
+<!-- 
+      v-for 最好都要绑定key
+00000000000000000 -->
+<body>
+  <div id="app">
+    <!-- 1.遍历过程没有使用索引（下标值） -->
+    <ul>
+      <li v-for="item in names" :key = 'item' >{{item}}</li>
+    </ul>
+    <!-- 2.遍历过程有使用索引（下标值） -->
+    <ul>
+        <li v-for="(item,index) in names" >{{index+":"+item}}</li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        names:["zzz","ttt","yyy"]
+      }
+    })
+  </script>
+</body>
+</html>
